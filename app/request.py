@@ -7,15 +7,17 @@ Article = articles.Article
 Source = sources.Source
 
 # Getting the API key
-api_key = app.config['NEWS_API_KEY']
-
-# Getting the news base url
-# news_base_url = app.config["NEWS_HEADLINES_BASE_URL"]
+api_key = None
 
 # Getting the news source base url
-source_base_url = app.config['NEWS_SOURCE_BASE_URL']
-article_base_url = app.config['ARTICLE_BASE_URL']
+source_base_url = None
+article_base_url = None
 
+def configure_request(app):
+    global api_key, base_url
+    api_key = app.config['NEWS_API_KEY']
+    source_base_url = app.config['NEWS_SOURCE_BASE_URL']
+    article_base_url = app.config['ARTICLE_BASE_URL']
 
 def get_source():
     '''
