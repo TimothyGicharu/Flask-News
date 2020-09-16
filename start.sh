@@ -1,4 +1,4 @@
-export NEWS_API_KEY = 'e475edfd0f0b46858e1a9519b1257cef'
-export SECRET_KEY='timothygicharu'
+export NEWS_API_KEY='e475edfd0f0b46858e1a9519b1257cef'
+export SECRET_KEY='<Flask WTF Secret Key>'
 
-python 3.7 manage.py server
+python 3 manage.py server
