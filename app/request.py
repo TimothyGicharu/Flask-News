@@ -76,6 +76,9 @@ def process_articleResults(article_list):
         publishedAt = article.get('publishedAt')
         content = article.get('content')
 
+        publishedAt = datetime.strptime(publishedAt, "%Y-%m-%dT%H:%M:%SZ").date()
+
+
         article_object = Article(source, author, title, description, url, urlToImage, publishedAt, content)
         article_results.append(article_object)
 
