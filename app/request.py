@@ -1,6 +1,6 @@
 from app import app
 import urllib.request, json
-from  .models import sources, articles
+from  .models import Source, Article
 from datetime import datetime
 
 Article = articles.Article
