@@ -1,0 +1,48 @@
+
+{% macro displaySourceList(source_list) %}
+
+    <div class="container-fluid source_list">
+        <div>
+            <br><br>
+        </div>
+        <div class="jumbotron hjumbo">
+            <div class="overlay">
+                <h1 class="text-white txt">News sources</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for source in source_list %}
+            <div class="col-sm-6">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-body text-success">
+                  <h2 class="card-title">{{source.name}}</h2>
+                  <p class="card-text">{{source.description}}</p>
+                  <a href="/sources/{{source.id}}" class="btn btn-primary">Go to {{source.name}}</a>
+                </d iv>
+              </div>
+            </div>
+            </div>
+          {% endfor %}
+        </div>
+
+{% endmacro %}
+
+{% macro displaySourceArticles(articles) %}
+    
+        <div class="row">
+            {% for article in articles%}
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ article.urlToImage if article.urlToImage != 'null' else url_for('static', filename='news1.jpg')}}" class="img-fluid img-responsive " alt="Responsive image">
+                        <h5 class="card-title">{{article.description}}</h5>
+                        <p class="card-text">{{article.publishedAt}}</p>
+                        <a href="{{article.url}}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+{% endmacro %}
