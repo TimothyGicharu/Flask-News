@@ -1,6 +1,6 @@
-from flask import render_template
+from flask import render_template, url_for
 from . import main
-from app import app
+# from app import app
 from ..request import get_source, get_source_articles
 
 # Views
